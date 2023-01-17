@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-for i in range(0, 100):
-    if (i < 10):
-        print("0{}, ".format(i),end= "")
-    elif (i>=10 and i<99):
-        print("{}, ".format(i), end= "")
-    elif(i == 99):
+for i in range(100):
+    print("{:02d}, ".format(i),end= "")
+    if i == 99:
         print("99\n")
