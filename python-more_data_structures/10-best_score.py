@@ -9,4 +9,4 @@ def best_score(a_dictionary):
                 student = i
         return student
     else:
-        return a_dictionary
+        return None
