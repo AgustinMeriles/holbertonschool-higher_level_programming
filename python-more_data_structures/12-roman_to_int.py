@@ -14,8 +14,10 @@ def roman_to_int(roman_string):
         }
         number = 0
         for i in range(len(roman_string)):
-            if i > 0 and translations[roman_string[i]] > translations[roman_string[i - 1]]:
-                number += translations[roman_string[i]] - 2 * translations[roman_string[i - 1]]
+            a = roman_string[i]
+            b = roman_string[i - 1]
+            if i > 0 and translations[a] > translations[b]:
+                number += translations[a] - 2 * translations[b]
             else:
-                number += translations[roman_string[i]]
+                number += translations[a]
         return number
