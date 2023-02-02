@@ -1,3 +1,7 @@
+#!/usr/bin/bash
+"""function that divides all elements of a matrix"""
+
+
 def matrix_divided(matrix, div):
     if type(div) not in [int, float]:
         raise TypeError("div must be a number")
