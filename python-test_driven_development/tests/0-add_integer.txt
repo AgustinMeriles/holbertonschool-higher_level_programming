@@ -1,0 +1,28 @@
+add_integer = __import__('0-add_integer').add_integer
+"""
+>>> print(add_integer(1, 2))
+3
+>>> print(add_integer(100, -2))
+98
+>>> print(add_integer(2))
+100
+>>> print(add_integer(100.3, -2))
+98
+>>> try:
+    print(add_integer(4, "School"))
+except Exception as e:
+    print(e)
+b must be an integer
+>>> try:
+    print(add_integer(None))
+except Exception as e:
+    print(e)
+a must be an integer
+>>> python3 -m doctest -v ./tests/0-add_integer.txt | tail -2
+9 passed and 0 failed.
+Test passed.
+>>> python3 -c 'print(__import__("0-add_integer").__doc__)' | wc -l
+5
+>>> python3 -c 'print(__import__("0-add_integer").add_integer.__doc__)' | wc -l
+3
+"""
