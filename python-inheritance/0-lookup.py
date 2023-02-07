@@ -4,4 +4,5 @@
 
 
 def lookup(obj):
+    """Inicialized"""
     return dir(obj)
