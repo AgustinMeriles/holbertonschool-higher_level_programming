@@ -3,6 +3,7 @@
 
 
 class MyList(list):
+    """Creation of the class"""
     def print_sorted(self):
         """Inicialized"""
         new = sorted(self)
