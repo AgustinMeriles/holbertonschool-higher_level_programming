@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Shebang"""
-import json
 
 
 class Student:
