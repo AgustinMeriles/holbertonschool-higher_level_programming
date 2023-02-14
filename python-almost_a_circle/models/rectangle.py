@@ -100,9 +100,13 @@ class Rectangle(Base):
         h = self.__height
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(id, x, y, w, h))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Function thaat assign an argument to each attribute"""
         self.args = args
         attributes = ['id', 'width', 'height', 'x', 'y']
-        for i in range(len(args)):
-            setattr(self, attributes[i], args[i])
+        if args:
+            for i in range(len(args)):
+                setattr(self, attributes[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
