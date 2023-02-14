@@ -86,11 +86,11 @@ class Rectangle(Base):
     def display(self):
         """function that prints in stdout the Rectangle intance with
         the caracter #"""
-
-        for i in range(self.__height):
-            for x in range(self.__width):
-                print("#", end="")
+        for nl in range(self.__y):
             print()
+        for i in range(self.__height):
+            print(" " * self.__x, end="")
+            print("#" * self.__width)
 
     def __str__(self):
         id = self.id
