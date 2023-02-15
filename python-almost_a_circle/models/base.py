@@ -45,3 +45,14 @@ class Base:
         else:
             v = []
             return v
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+        name = cls.__name__
+        if name == "Rectangle":
+            dummy = cls(1, 1)
+        elif name == "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
