@@ -40,4 +40,8 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """Function that returns the list of the JSON string representstion"""
-        return json.loads(json_string)
+        if json_string:
+            return json.loads(json_string)
+        else:
+            v = []
+            return v
