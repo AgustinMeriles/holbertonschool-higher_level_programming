@@ -17,7 +17,8 @@ if __name__ == '__main__':
         db=d_name)
 
     cur = my_connection.cursor()
-    q = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC"
+    q = """SELECT * FROM states WHERE name LIKE BINARY 'N%'
+    ORDER BY states.id ASC"""
     cur.execute(q)
 
     for state in cur.fetchall():
