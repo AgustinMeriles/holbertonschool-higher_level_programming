@@ -23,5 +23,5 @@ if __name__ == '__main__':
     ORDER BY cities.id ASC""", (state_name,))
     cur.execute(q)
 
-    for element in cur.fetchall():
-        print(element)
+    rows = cur.fetchall()
+    print(", ".join(city[0] for city in rows))
