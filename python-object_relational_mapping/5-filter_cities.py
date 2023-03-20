@@ -21,7 +21,7 @@ if __name__ == '__main__':
     q = ("""SELECT cities.name FROM cities JOIN states ON
     cities.state_id = states.id WHERE states.name = %s
     ORDER BY cities.id ASC""", (state_name,))
-    cur.execute(q)
+    cur.execute(q[0], q[1])
 
     list_of_cities = []
 
