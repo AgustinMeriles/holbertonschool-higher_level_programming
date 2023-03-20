@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
     cur = my_connection.cursor()
 
-    cur.execute(f"""SELECT * FROM states WHERE name LIKE {state_name}
-    ORDER BY states.id ASC""")
+    cur.execute("""SELECT * FROM states WHERE name LIKE {}
+    ORDER BY states.id ASC"""format(state_name))
     for element in cur.fetchall():
         print(element)
