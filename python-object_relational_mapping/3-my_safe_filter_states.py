@@ -18,7 +18,7 @@ if __name__ == '__main__':
         db=d_name)
 
     cur = my_connection.cursor()
-    q = "SELECT * FROM states WHERE name=%s ORDER BY id ASC"
+    q = "SELECT * FROM states WHERE name=%s ORDER BY states.id ASC"
     my_connection.execute(q, (sys.argv[4],))
 
     for element in cur.fetchall():
