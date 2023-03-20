@@ -18,7 +18,7 @@ if __name__ == '__main__':
         db=d_name)
 
     cur = my_connection.cursor()
-    q = ("""SELECT * FROM states WHERE name LIKE {}
+    q = ("""SELECT * FROM states WHERE name LIKE BINARY '{}'
     ORDER BY states.id ASC""".format(state_name))
     cur.execute(q)
     for element in cur.fetchall():
