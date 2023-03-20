@@ -23,11 +23,8 @@ if __name__ == '__main__':
     ORDER BY cities.id ASC""".format(state_name,))
     cur.execute(q)
 
-    list_of_cities = []
-
-    for row in cur.fetchall():
-        list_of_cities.append(row[0])
-    print(", ".join[list_of_cities])
-
-    cur.close()
-    my_connection.close()
+    for i, city in enumerate(cur.fetchall()):
+        if i != 0:
+            print(", ", end="")
+        print(city[0], end="")
+    print()
