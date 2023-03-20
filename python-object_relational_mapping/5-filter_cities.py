@@ -5,11 +5,6 @@ if __name__ == '__main__':
     import MySQLdb
     import sys
 
-    if len(sys.argv) != 5:
-        print("Usage: {} username password database state_name"
-              .format(sys.argv[0]))
-        exit(1)
-
     mS_username = sys.argv[1]
     mS_password = sys.argv[2]
     d_name = sys.argv[3]
@@ -24,8 +19,8 @@ if __name__ == '__main__':
 
     cur = my_connection.cursor()
     q = ("""SELECT cities.name FROM cities JOIN states ON
-    cities.state_id = states.id WHERE states.name = %s
-    ORDER BY cities.id ASC""", (state_name,))
+    cities.state_id = states.id WHERE states.name LIKE BINARY '{}'
+    ORDER BY cities.id ASC""".format(state_name,))
     cur.execute(q)
 
     list_of_cities = []
