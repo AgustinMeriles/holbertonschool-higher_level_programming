@@ -17,7 +17,8 @@ if __name__ == '__main__':
         db=d_name)
 
     cur = my_connection.cursor()
-    cur.excecute("SELECT * FROM states WHERE name REGEXP '^N'")
+    q = "SELECT * FROM states WHERE name REGEXP '^N' ORDER BY states.id ASC"
+    cur.excecute(q)
 
     for state in cur.fetchall():
         print(state)
