@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const number = parseInt(process.argv[2]);
-const txt = 'x';
+const txt = 'X';
 let i;
 let p = '';
 
