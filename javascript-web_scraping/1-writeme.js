@@ -7,7 +7,5 @@ const data = process.argv[3];
 fs.writeFile(filePath, data, (err) => {
   if (err) {
     console.error(err);
-  } else {
-    console.log(fs.readFileSync(filePath, 'utf-8'));
   }
 });
